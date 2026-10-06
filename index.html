@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PG del Campo — Del Campo a su Mesa. Café de altura, pinolillo, pinol y humus de lombriz. Jinotepe, Carazo, Nicaragua.">
+  <meta name="theme-color" content="#2d5a27">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PG del Campo">
+  <title>PG del Campo | Del Campo a su Mesa</title>
+  <link rel="icon" href="img/icon-192.png">
+  <link rel="apple-touch-icon" href="img/icon-192.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header">
+  <div class="nav-bar">
+    <a href="#inicio" class="nav-brand">
+      <img src="img/logo.png" alt="Productos Globales del Campo" style="height:46px;width:auto;display:block">
+    </a>
+    <button id="nav-toggle" aria-label="Menú">☰</button>
+    <ul id="nav-links" class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#empresa">Nuestra Empresa</a></li>
+      <li><a href="#club">Club de Fidelidad</a></li>
+      <li><a href="#nutricion">Nutrición</a></li>
+      <li><a href="#pagos">Pagos</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <img src="img/logo.png" alt="Productos Globales del Campo" style="max-width:320px;width:72%;height:auto;margin:0 auto 16px;display:block;filter:drop-shadow(0 3px 12px rgba(0,0,0,.35))">
+    <h1 id="hero-title">PG del Campo</h1>
+    <p class="slogan" id="hero-slogan">Del Campo a su Mesa</p>
+    <p class="lema" id="hero-lema">Todo lo bueno viene de Dios, con su ayuda todo es posible</p>
+    <a href="#productos" class="hero-btn">Conoce Nuestros Productos</a>
+  </div>
+</section>
+
+<!-- ==================== INICIO — ACCIONES RÁPIDAS ==================== -->
+<section class="seccion">
+  <h2 class="seccion-titulo"><span class="icono">🏠</span> Bienvenidos</h2>
+  <hr class="seccion-sep">
+  <div class="action-grid">
+    <a href="#empresa" class="card-btn">
+      <span class="card-icon">🏢</span>
+      <span class="card-label">Nuestra Empresa</span>
+      <span class="card-desc">Conócenos</span>
+    </a>
+    <a id="link-kyte" href="#" target="_blank" class="card-btn highlight">
+      <span class="card-icon">🛒</span>
+      <span class="card-label">Nuestros Productos (Kyte)</span>
+      <span class="card-desc">Tienda en línea</span>
+    </a>
+    <a href="#nutricion" class="card-btn">
+      <span class="card-icon">📊</span>
+      <span class="card-label">Tabla Nutricional</span>
+      <span class="card-desc">Café y más</span>
+    </a>
+    <a id="link-qr" href="#" target="_blank" class="card-btn">
+      <span class="card-icon">💳</span>
+      <span class="card-label">Realiza tus Pagos</span>
+      <span class="card-desc">En línea y QR</span>
+    </a>
+    <a id="link-agente" href="#" target="_blank" class="card-btn">
+      <span class="card-icon">👤</span>
+      <span class="card-label">Contacta un Agente</span>
+      <span class="card-desc">Tarjeta digital</span>
+    </a>
+    <a id="link-tarjeta" href="#" target="_blank" class="card-btn highlight">
+      <span class="card-icon">⭐</span>
+      <span class="card-label">Tarjeta de Fidelidad</span>
+      <span class="card-desc">Acumula estrellas</span>
+    </a>
+  </div>
+</section>
+
+<!-- ==================== PRODUCTOS ==================== -->
+<section id="productos" class="seccion">
+  <h2 class="seccion-titulo"><span class="icono">🌾</span> Nuestros Productos</h2>
+  <p class="seccion-sub">Productos frescos y de calidad directamente para ti.</p>
+  <hr class="seccion-sep">
+  <div id="productos-grid" class="productos-grid"></div>
+  <p class="text-center mt-20">
+    <a id="link-kyte2" href="#" target="_blank" class="hero-btn">Ver Tienda Completa en Kyte</a>
+  </p>
+</section>
+
+<!-- ==================== NUESTRA EMPRESA ==================== -->
+<section id="empresa" class="seccion">
+  <h2 class="seccion-titulo"><span class="icono">🏢</span> Nuestra Empresa</h2>
+  <p class="seccion-sub">Del campo a su mesa · Jinotepe, Carazo</p>
+  <hr class="seccion-sep">
+  <div class="empresa-grid">
+    <div class="empresa-info">
+      <h3>📍 Ubicación</h3>
+      <p id="footer-dir" style="margin-bottom:14px"></p>
+      <h3>📞 Contacto</h3>
+      <p id="footer-phone" style="margin-bottom:2px"></p>
+      <p><a id="footer-email-link" href="mailto:proglodelcam@gmail.com"><span id="footer-email"></span></a></p>
+      <h3 style="margin-top:18px">🕐 Horarios de atención</h3>
+      <table class="horario-table">
+        <tbody id="horarios-body"></tbody>
+      </table>
+    </div>
+    <div class="empresa-info">
+      <h3>☕ Nuestra Misión</h3>
+      <p>Llevar productos naturales y de calidad del campo nicaragüense directamente a su mesa, con sabor auténtico y tradición.</p>
+      <h3 style="margin-top:18px">🌱 Lo que nos hace únicos</h3>
+      <p>Café de altura de Carazo, pinolillo artesanal, pinol tradicional y abono orgánico (humus de lombriz). Todo 100% natural, sin preservantes.</p>
+      <h3 style="margin-top:18px">🚚 Envíos</h3>
+      <p>Zona de Carazo y alrededores. Consulta disponibilidad con un agente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CLUB DE FIDELIDAD ==================== -->
+<section id="club" class="seccion">
+  <h2 class="seccion-titulo"><span class="icono">⭐</span> Club de Fidelidad</h2>
+  <p class="seccion-sub" id="club-eslogan">Tu lealtad nos inspira, la naturaleza nos une</p>
+  <hr class="seccion-sep">
+  <p>Gracias por preferir nuestros productos naturales. Únete a nuestro CLUB y disfruta de descuentos y beneficios exclusivos por tu lealtad.</p>
+  <div id="club-pasos" class="club-pasos" style="margin-top:24px"></div>
+  <p id="club-cierre" style="margin-top:20px;font-style:italic"></p>
+  <div class="club-acciones">
+    <a id="link-kyte-cereales" href="#" target="_blank" class="hero-btn" style="background:#2d5a27">Ir a la Tienda Kyte</a>
+    <a id="link-tarjeta2" href="#" target="_blank" class="hero-btn" style="background:#c8963e">⭐ Mi Tarjeta de Fidelidad</a>
+    <a id="link-whatsapp2" href="#" target="_blank" class="hero-btn" style="background:#25d366">¿Dudas? WhatsApp</a>
+  </div>
+</section>
+
+<!-- ==================== TABLA NUTRICIONAL ==================== -->
+<section id="nutricion" class="seccion">
+  <h2 class="seccion-titulo"><span class="icono">📊</span> Tabla Nutricional</h2>
+  <p class="seccion-sub">Información nutricional del café tostado y molido</p>
+  <hr class="seccion-sep">
+  <p>El café tostado y molido es una fuente natural de antioxidantes y cafeína. En promedio, una taza de café negro contiene 2 kcal, 0.3 g de proteínas, 4.7 mg de sodio y 94.8 mg de potasio.</p>
+  <table class="nutri-table" style="margin-top:20px">
+    <thead><tr><th>Nutriente</th><th>Valor por 100 g</th></tr></thead>
+    <tbody id="nutri-body"></tbody>
+  </table>
+  <p class="nutri-nota" id="nutri-nota"></p>
+</section>
+
+<!-- ==================== PAGA CON QR ==================== -->
+<section id="pagos" class="seccion">
+  <h2 class="seccion-titulo"><span class="icono">💳</span> Paga con QR</h2>
+  <p class="seccion-sub">Realiza tus pagos cómodo y SEGURO en LaFise Digital</p>
+  <hr class="seccion-sep">
+  <div class="pago-grid">
+    <div class="pago-card">
+      <h3>📱 Pasos para pagar con LAFISE</h3>
+      <ol>
+        <li><span class="paso-num">1</span>Verifica tu App — Asegúrate de tener instalada y activa tu aplicación de LAFISE en tu celular.</li>
+        <li><span class="paso-num">2</span>Escanea o Haz Clic — Si usas el QR: Abre el escáner de tu app LAFISE y apunta al código. Si usas el Link de Pago: Haz clic y la app se abrirá automáticamente.</li>
+        <li><span class="paso-num">3</span>Confirma — Revisa los datos de PG del Campo, ingresa tu código de seguridad (o huella) ¡y listo!</li>
+      </ol>
+      <p style="margin-top:12px;font-size:.88rem"><strong>🔒 Seguridad:</strong> Los pagos a través de LAFISE utilizan protocolos de seguridad bancaria como el código OTP y estándares IBAN para transferencias.</p>
+    </div>
+    <div class="pago-card">
+      <h3>🏦 Otras opciones de pago</h3>
+      <p style="margin-bottom:14px"><strong>Pago Contra Entrega</strong></p>
+      <p id="pago-entrega"></p>
+      <div class="banco-datos" style="margin-top:16px">
+        <p><strong>Transferencia Bancaria</strong></p>
+        <p>Banco: <strong id="pago-banco"></strong></p>
+        <p>Cuenta No.: <strong id="pago-cuenta"></strong></p>
+        <p>Alias ACH/Móvil: <strong id="pago-alias"></strong></p>
+        <p>Titular: <strong id="pago-titular"></strong></p>
+      </div>
+      <div class="banco-datos" style="margin-top:10px">
+        <p><strong>Cheque</strong></p>
+        <p id="pago-cheque"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CHATBOT FLOTANTE ==================== -->
+<button id="chat-fab" class="chat-fab" aria-label="Abrir chat">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2V4M12 20V22M4 12H2M22 12H20" stroke="#00E5FF" stroke-width="2" stroke-linecap="round"/>
+    <rect x="5" y="6" width="14" height="12" rx="3" fill="#1E293B" stroke="#00E5FF" stroke-width="2"/>
+    <circle cx="9" cy="11" r="1.5" fill="#00E5FF"/>
+    <circle cx="15" cy="11" r="1.5" fill="#00E5FF"/>
+    <path d="M9 15H15" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<div id="chat-panel" class="chat-panel">
+  <div class="chat-header">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2V4M12 20V22M4 12H2M22 12H20" stroke="#0080FF" stroke-width="2" stroke-linecap="round"/>
+      <rect x="5" y="6" width="14" height="12" rx="3" fill="#1E293B" stroke="#0080FF" stroke-width="2"/>
+      <circle cx="9" cy="11" r="1.5" fill="#00E5FF"/>
+      <circle cx="15" cy="11" r="1.5" fill="#00E5FF"/>
+      <path d="M9 15H15" stroke="#00E5FF" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <h3 id="chat-title">BotsPG</h3>
+    <span class="badge" id="chat-badge">Asistente Virtual</span>
+    <button id="chat-close" class="chat-close">✕</button>
+  </div>
+  <div id="chat-body" class="chat-body">
+    <div class="chat-msg bot" id="chat-welcome">¡Hola! Soy <b>BotsPG</b>, asistente de Productos Globales del Campo.</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="chat-input" placeholder="Pregúntame por precios, productos o presupuestos...">
+    <button id="chat-send">Enviar</button>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <p id="footer-copy">© 2026 PG del Campo. Todos los derechos reservados.</p>
+  <p id="footer-location">Jinotepe, Carazo — Nicaragua</p>
+  <p>Tel: <span id="footer-phone2"></span> · <a id="footer-email-link2" href="mailto:proglodelcam@gmail.com"><span id="footer-email2"></span></a></p>
+  <p id="footer-ruc"></p>
+</footer>
+
+<!-- Scripts -->
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Configuración remota editable desde el Panel (Firebase RTDB config/web) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+  const firebaseConfig = {
+    apiKey: "AIzaSyBfPmfE6axd_W0Z80b0L-Jbjy6q7l9_NTk",
+    authDomain: "productos-globales-campo.firebaseapp.com",
+    databaseURL: "https://productos-globales-campo-default-rtdb.firebaseio.com",
+    projectId: "productos-globales-campo",
+    storageBucket: "productos-globales-campo.firebasestorage.app",
+    messagingSenderId: "938958452862",
+    appId: "1:938958452862:web:3b618567dae9aa01b7c02f"
+  };
+  // Mezcla superficial por sección: lo que venga del panel sobre-escribe el valor local.
+  function mezclar(destino, origen){
+    if(!origen) return;
+    Object.keys(origen).forEach(sec=>{
+      if(origen[sec] && typeof origen[sec]==='object' && !Array.isArray(origen[sec])){
+        destino[sec] = Object.assign({}, destino[sec]||{}, origen[sec]);
+      } else if(origen[sec]!=null && origen[sec]!==''){
+        destino[sec] = origen[sec];
+      }
+    });
+  }
+  (async ()=>{
+    try{
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const snap = await get(child(ref(db),'config/web'));
+      if(snap.exists() && window.APP_CONFIG){
+        mezclar(window.APP_CONFIG, snap.val());
+        if(typeof window.aplicarConfig==='function') window.aplicarConfig();
+      }
+    }catch(e){ /* la web funciona igual con la configuración local */ console.warn('config/web:', e); }
+  })();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>
