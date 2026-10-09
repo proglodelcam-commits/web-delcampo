@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PG del Campo — Del Campo a su Mesa. Café de altura, pinolillo, pinol y humus de lombriz. Jinotepe, Carazo, Nicaragua.">
+  <meta name="theme-color" content="#2d5a27">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PG del Campo">
+  <title>PG del Campo | Del Campo a su Mesa</title>
+  <link rel="icon" href="img/icon-192.png">
+  <link rel="apple-touch-icon" href="img/icon-192.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Logo verde con fondo transparente: sin recuadro blanco, se integra al diseño -->
+  <style>
+    .nav-logo-img,.footer-logo-img{
+      background:transparent;
+      object-fit:contain;
+      display:block;
+    }
+    .nav-logo-img{height:46px;width:auto;max-width:210px}
+    .footer-logo-img{height:66px;width:auto;max-width:240px;margin:0 auto}
+    @media (max-width:480px){
+      .nav-logo-img{height:40px;max-width:170px}
+      .footer-logo-img{height:56px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header">
+  <div class="nav-bar">
+    <a href="#inicio" class="nav-brand">
+      <img src="img/logo-pg.png" alt="Productos Globales del Campo" class="nav-logo-img" loading="eager">
+    </a>
+    <button id="nav-toggle" aria-label="Menú">☰</button>
+    <ul id="nav-links" class="nav-links">
+      <li><a href="#inicio" style="display:inline-flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="nav-ico"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg>Inicio</a></li>
+      <li><a href="#productos" style="display:inline-flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="nav-ico"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Productos</a></li>
+      <li><a href="#empresa" style="display:inline-flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="nav-ico"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h2M8 11h2M8 15h2M14 7h2M14 11h2M14 15h2"/></svg>Nuestra Empresa</a></li>
+      <li><a href="#club" style="display:inline-flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="nav-ico"><path d="m12 3 2.7 5.5 6 .9-4.3 4.2 1 6-5.4-2.8L6.6 19.6l1-6L3.3 9.4l6-.9L12 3Z"/></svg>Club de Fidelidad</a></li>
+      <li><a href="#nutricion" style="display:inline-flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="nav-ico"><path d="M11 20c-4 0-7-3-7-7 0-3 2-5 5-5 1.5 0 2.5.7 2.9 1.8"/><path d="M13 20c4 0 7-3 7-7 0-3-2-5-5-5-2.5 0-4 2-4 4"/><path d="M12 3c0 2 1 3 3 3"/></svg>Nutrición</a></li>
+      <li><a href="#pagos" style="display:inline-flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="nav-ico"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg>Pagos</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section id="inicio" class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="img/logo-pg.png" alt="PG del Campo" class="hero-logo">
+    <h1 id="hero-title" class="hero-title-text">PG del Campo</h1>
+    <p class="slogan" id="hero-slogan">Del Campo a su Mesa</p>
+    <p class="lema" id="hero-lema">Todo lo bueno viene de Dios, con su ayuda todo es posible</p>
+    <a href="#productos" class="hero-btn">Conoce Nuestros Productos</a>
+  </div>
+</section>
+
+<!-- ==================== INICIO — ACCIONES RÁPIDAS ==================== -->
+<section class="seccion">
+  <h2 class="seccion-titulo" id="sec-bienvenidos">Bienvenidos</h2>
+  <hr class="seccion-sep">
+  <div class="action-grid">
+    <a href="#empresa" class="card-btn">
+      <span class="card-icon" id="ico-empresa"></span>
+      <span class="card-label">Nuestra Empresa</span>
+      <span class="card-desc">Conócenos</span>
+    </a>
+    <a id="link-kyte" href="#" target="_blank" class="card-btn highlight">
+      <span class="card-icon" id="ico-kyte"></span>
+      <span class="card-label">Nuestros Productos (Kyte)</span>
+      <span class="card-desc">Tienda en línea</span>
+    </a>
+    <a id="link-tarjeta" href="#" target="_blank" class="card-btn">
+      <span class="card-icon" id="ico-club"></span>
+      <span class="card-label">Tarjeta de Fidelidad</span>
+      <span class="card-desc">Acumula estampas</span>
+    </a>
+    <a id="link-qr" href="#" target="_blank" class="card-btn">
+      <span class="card-icon" id="ico-pago"></span>
+      <span class="card-label">Realiza tus Pagos</span>
+      <span class="card-desc">En línea y QR</span>
+    </a>
+    <a id="link-agente" href="#" target="_blank" class="card-btn">
+      <span class="card-icon" id="ico-agente"></span>
+      <span class="card-label">Contacta un Agente</span>
+      <span class="card-desc">Tarjeta digital</span>
+    </a>
+  </div>
+</section>
+
+<!-- ==================== PRODUCTOS ==================== -->
+<section id="productos" class="seccion">
+  <h2 class="seccion-titulo" id="sec-productos">Nuestros Productos</h2>
+  <p class="seccion-sub">Productos frescos y de calidad directamente para ti.</p>
+  <hr class="seccion-sep">
+  <div id="productos-grid" class="productos-grid"></div>
+  <p class="text-center mt-20">
+    <a id="link-kyte2" href="#" target="_blank" class="hero-btn">Ver Tienda Completa en Kyte</a>
+  </p>
+</section>
+
+<!-- ==================== NUESTRA EMPRESA ==================== -->
+<section id="empresa" class="seccion">
+  <h2 class="seccion-titulo" id="sec-empresa">Nuestra Empresa</h2>
+  <p class="seccion-sub">Del campo a su mesa · Jinotepe, Carazo</p>
+  <hr class="seccion-sep">
+  <div class="empresa-grid">
+    <div class="empresa-info">
+      <h3 id="h3-ubicacion">Ubicación</h3>
+      <p id="footer-dir" style="margin-bottom:14px"></p>
+      <h3 id="h3-contacto">Contacto</h3>
+      <p id="footer-phone" style="margin-bottom:2px"></p>
+      <p><a id="footer-email-link" href="mailto:proglodelcam@gmail.com"><span id="footer-email"></span></a></p>
+      <h3 style="margin-top:18px" id="h3-horarios">Horarios de atención</h3>
+      <table class="horario-table">
+        <tbody id="horarios-body"></tbody>
+      </table>
+    </div>
+    <div class="empresa-info">
+      <h3 id="h3-mision">Nuestra Misión</h3>
+      <p id="empresa-mision"></p>
+      <h3 style="margin-top:18px" id="h3-unico">Lo que nos hace únicos</h3>
+      <p id="empresa-unico"></p>
+      <h3 style="margin-top:18px" id="h3-envio">Envíos</h3>
+      <p id="empresa-envio"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CLUB DE FIDELIDAD ==================== -->
+<section id="club" class="seccion">
+  <h2 class="seccion-titulo" id="sec-club">Club de Fidelidad</h2>
+  <p class="seccion-sub" id="club-eslogan">Tu lealtad nos inspira, la naturaleza nos une</p>
+  <hr class="seccion-sep">
+  <p id="club-descripcion"></p>
+
+  <!-- Beneficios -->
+  <div class="club-beneficios-card">
+    <h3 id="h3-beneficios">Beneficios del Club</h3>
+    <ul id="club-beneficios" class="club-beneficios-list"></ul>
+  </div>
+
+  <!-- Pasos -->
+  <div id="club-pasos" class="club-pasos" style="margin-top:28px"></div>
+
+  <!-- Tarjeta de Fidelidad — Acceso directo -->
+  <div class="tarjeta-fidelidad-card">
+    <div class="tarjeta-fidelidad-visual">
+      <div class="tarjeta-fidelidad-stamps">
+        <span class="stamp-icon active">★</span>
+        <span class="stamp-icon active">★</span>
+        <span class="stamp-icon">★</span>
+        <span class="stamp-icon">★</span>
+        <span class="stamp-icon">★</span>
+      </div>
+      <div class="tarjeta-fidelidad-label">Tarjeta de Fidelidad Digital</div>
+      <div class="tarjeta-fidelidad-sub">Acumula estampas · Canjea premios</div>
+    </div>
+    <div class="tarjeta-fidelidad-actions">
+      <a id="link-tarjeta-club" href="#" target="_blank" class="hero-btn tarjeta-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.9 6.3L22 9.2l-5 4.6L18.2 21 12 17.5 5.8 21 7 13.8 2 9.2l7.1-.9z" fill="#fff" opacity=".8"/></svg>
+        Acceder a mi Tarjeta de Fidelidad
+      </a>
+      <p class="tarjeta-fidelidad-nota">App completa: catálogo, carrito, estampas y pagos con LAFISE</p>
+    </div>
+  </div>
+
+  <p id="club-cierre" style="margin-top:20px;font-style:italic"></p>
+  <div class="club-acciones">
+    <a id="link-kyte-cereales" href="#" target="_blank" class="hero-btn" style="background:#2d5a27">Ir a la Tienda Kyte</a>
+    <a id="link-whatsapp2" href="#" target="_blank" class="hero-btn" style="background:#25d366">Contáctanos por WhatsApp</a>
+  </div>
+</section>
+
+<!-- ==================== INFORMACIÓN NUTRICIONAL ==================== -->
+<section id="nutricion" class="seccion">
+  <h2 class="seccion-titulo" id="sec-nutricion">Información Nutricional</h2>
+  <p class="seccion-sub" id="nutri-subtitulo">Valores nutricionales del café tostado y molido</p>
+  <hr class="seccion-sep">
+  <p>El café tostado y molido es una fuente natural de antioxidantes y cafeína. En promedio, una taza de café negro contiene 2 kcal, 0.3 g de proteínas, 4.7 mg de sodio y 94.8 mg de potasio.</p>
+
+  <!-- Infografía visual -->
+  <div class="nutri-infografia">
+    <img id="nutri-img" src="img/nutricion-infografia.jpg" alt="Infografía nutricional — Café PG del Campo" loading="lazy">
+  </div>
+
+  <!-- Tabla detallada -->
+  <details class="nutri-details">
+    <summary class="nutri-summary-btn">Ver tabla detallada de nutrientes</summary>
+    <table class="nutri-table" style="margin-top:16px">
+      <thead><tr><th>Nutriente</th><th>Valor por 100 g</th></tr></thead>
+      <tbody id="nutri-body"></tbody>
+    </table>
+  </details>
+  <p class="nutri-nota" id="nutri-nota"></p>
+</section>
+
+<!-- ==================== PAGA CON QR ==================== -->
+<section id="pagos" class="seccion">
+  <h2 class="seccion-titulo" id="sec-pagos">Paga con QR</h2>
+  <p class="seccion-sub">Realiza tus pagos cómodo y SEGURO en LaFise Digital</p>
+  <hr class="seccion-sep">
+  <div class="pago-grid">
+    <div class="pago-card">
+      <h3>Pasos para pagar con LAFISE</h3>
+      <ol>
+        <li><span class="paso-num">1</span>Verifica tu App — Asegúrate de tener instalada y activa tu aplicación de LAFISE en tu celular.</li>
+        <li><span class="paso-num">2</span>Escanea o Haz Clic — Si usas el QR: Abre el escáner de tu app LAFISE y apunta al código. Si usas el Link de Pago: Haz clic y la app se abrirá automáticamente.</li>
+        <li><span class="paso-num">3</span>Confirma — Revisa los datos de PG del Campo, ingresa tu código de seguridad (o huella) ¡y listo!</li>
+      </ol>
+      <p style="margin-top:12px;font-size:.88rem"><strong>Seguridad:</strong> Los pagos a través de LAFISE utilizan protocolos de seguridad bancaria como el código OTP y estándares IBAN para transferencias.</p>
+    </div>
+    <div class="pago-card">
+      <h3>Otras opciones de pago</h3>
+      <p style="margin-bottom:14px"><strong>Pago Contra Entrega</strong></p>
+      <p id="pago-entrega"></p>
+      <div class="banco-datos" style="margin-top:16px;border:1.5px solid #2d5a27;border-radius:14px;padding:16px 18px;background:#fff">
+        <div style="display:flex;align-items:center;gap:10px;color:#2d5a27;font-weight:700;font-size:.98rem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 9.5 12 4l9 5.5" stroke="#2d5a27" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 10v8M9 10v8M15 10v8M19 10v8" stroke="#2d5a27" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M3 20.5h18" stroke="#2d5a27" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span>Transferencia Directa / ACH <span id="pago-banco">LaFise</span></span>
+        </div>
+        <hr style="border:none;border-top:1px dashed #c8963e;margin:12px 0">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin:9px 0;flex-wrap:wrap">
+          <span style="color:#555">Titular:</span>
+          <strong id="pago-titular" style="color:#1f2937;text-align:right">Fernando Martínez (PG del Campo)</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin:9px 0;flex-wrap:wrap">
+          <span style="color:#555">Alias ACH / Móvil:</span>
+          <span style="display:inline-flex;align-items:center;gap:10px">
+            <strong id="pago-ach" style="color:#1f2937">57973097</strong>
+            <button id="btn-copy-ach" type="button" style="display:inline-flex;align-items:center;gap:6px;background:#2d5a27;color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:.82rem;font-weight:600;cursor:pointer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="9" y="9" width="11" height="11" rx="2" stroke="#fff" stroke-width="1.8"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <span id="btn-copy-ach-label">Copiar</span>
+            </button>
+          </span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin:9px 0;flex-wrap:wrap">
+          <span style="color:#555">Número de Cuenta:</span>
+          <strong id="pago-cuenta" style="color:#1f2937">140051265</strong>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-top:12px;color:#6b7280;font-size:.82rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;margin-top:1px">
+            <circle cx="12" cy="12" r="9" stroke="#c8963e" stroke-width="1.8"/>
+            <path d="M12 11v5" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="12" cy="8" r="1" fill="#c8963e"/>
+          </svg>
+          <span>Puedes transferir desde cualquier banco usando el Alias ACH con el número de celular.</span>
+        </div>
+      </div>
+      <div class="banco-datos" style="margin-top:10px">
+        <p><strong>Cheque</strong></p>
+        <p id="pago-cheque"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Botón "Copiar" del Alias ACH / Móvil
+(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    var btn=document.getElementById('btn-copy-ach');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var el=document.getElementById('pago-ach');
+      var val=(el?el.textContent:'').replace(/\s+/g,'');
+      var lab=document.getElementById('btn-copy-ach-label');
+      var done=function(){ if(lab){ var old=lab.textContent; lab.textContent='\u00a1Copiado!'; setTimeout(function(){ lab.textContent=old; },1600); } };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(val).then(done, done); }
+      else { try{ var t=document.createElement('textarea'); t.value=val; document.body.appendChild(t); t.select(); document.execCommand('copy'); document.body.removeChild(t); }catch(e){} done(); }
+    });
+  });
+})();
+</script>
+
+<!-- ==================== CHATBOT FLOTANTE ==================== -->
+<button id="chat-fab" class="chat-fab" aria-label="Abrir chat con el asistente">
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="pgFabBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#3b8b33"/><stop offset="1" stop-color="#2d5a27"/></linearGradient></defs>
+    <circle cx="24" cy="24" r="23" fill="url(#pgFabBg)"/>
+    <circle cx="24" cy="24" r="23" fill="none" stroke="#c8963e" stroke-width="1.6" opacity=".7"/>
+    <path d="M14 18.5c0-1.93 1.57-3.5 3.5-3.5h13c1.93 0 3.5 1.57 3.5 3.5v8c0 1.93-1.57 3.5-3.5 3.5H22.3l-5.1 3.9c-.82.63-2 .04-2-.99V30.4A3.5 3.5 0 0 1 14 27v-8.5Z" fill="#ffffff"/>
+    <circle cx="19.6" cy="23" r="1.75" fill="#2d5a27"/>
+    <circle cx="24" cy="23" r="1.75" fill="#2d5a27"/>
+    <circle cx="28.4" cy="23" r="1.75" fill="#c8963e"/>
+  </svg>
+</button>
+
+<div id="chat-panel" class="chat-panel">
+  <div class="chat-header">
+    <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="pgHdBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stop-color="#3b8b33"/><stop offset="1" stop-color="#2d5a27"/></linearGradient></defs>
+      <path d="M12 18c0-2.49 2.01-4.5 4.5-4.5h15c2.49 0 4.5 2.01 4.5 4.5v9c0 2.49-2.01 4.5-4.5 4.5H23l-5.8 4.4c-.82.62-2 .03-2-1V31.9A4.5 4.5 0 0 1 12 27.5V18Z" fill="url(#pgHdBg)"/>
+      <circle cx="19" cy="23" r="1.9" fill="#ffffff"/>
+      <circle cx="24" cy="23" r="1.9" fill="#ffffff"/>
+      <circle cx="29" cy="23" r="1.9" fill="#c8963e"/>
+    </svg>
+    <h3 id="chat-title">BotsPG</h3>
+    <span class="badge" id="chat-badge">Asistente Virtual</span>
+    <button id="chat-close" class="chat-close">✕</button>
+  </div>
+  <div id="chat-body" class="chat-body">
+    <div class="chat-msg bot" id="chat-welcome">¡Hola! Soy <b>BotsPG</b>, asistente de Productos Globales del Campo.</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="chat-input" placeholder="Pregúntame por precios, productos o presupuestos...">
+    <button id="chat-send">Enviar</button>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+  <div class="footer-logo-row">
+    <img src="img/logo-pg.png" alt="PG del Campo" class="footer-logo-img">
+  </div>
+  <p id="footer-copy">© 2026 PG del Campo. Todos los derechos reservados.</p>
+  <p id="footer-location">Jinotepe, Carazo — Nicaragua</p>
+  <p>Tel: <span id="footer-phone2"></span> · <a id="footer-email-link2" href="mailto:proglodelcam@gmail.com"><span id="footer-email2"></span></a></p>
+  <p id="footer-ruc"></p>
+</footer>
+
+<!-- Scripts -->
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script>
+// Inyectar íconos SVG en elementos
+(function(){
+  var map = {
+    'sec-bienvenidos': 'home',
+    'sec-productos': 'leaf',
+    'sec-empresa': 'building',
+    'sec-club': 'star',
+    'sec-nutricion': 'chart',
+    'sec-pagos': 'card',
+    'h3-ubicacion': 'location',
+    'h3-contacto': 'phone',
+    'h3-horarios': 'clock',
+    'h3-mision': 'target',
+    'h3-unico': 'sprout',
+    'h3-envio': 'truck',
+    'h3-beneficios': 'stamp',
+    'ico-empresa': 'building',
+    'ico-kyte': 'cart',
+    'ico-club': 'star',
+    'ico-pago': 'card',
+    'ico-agente': 'user'
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      if (typeof ICONS === 'undefined') return;
+      Object.keys(map).forEach(function(id){
+        var el = document.getElementById(id);
+        if (el && ICONS[map[id]]) {
+          if (id.startsWith('ico-')) {
+            el.innerHTML = '<span style="display:inline-flex;width:clamp(2.2rem,6vw,3rem);height:clamp(2.2rem,6vw,3rem);align-items:center;justify-content:center;">' + ICONS[map[id]] + '</span>';
+          } else if (id.startsWith('h3-')) {
+            el.innerHTML = '<span style="display:inline-flex;width:1.3rem;height:1.3rem;align-items:center;justify-content:center;margin-right:6px;">' + ICONS[map[id]] + '</span>' + el.textContent;
+          } else {
+            el.innerHTML = '<span style="display:inline-flex;width:clamp(1.8rem,5vw,2.2rem);height:clamp(1.8rem,5vw,2.2rem);align-items:center;justify-content:center;margin-right:8px;">' + ICONS[map[id]] + '</span>' + el.textContent;
+          }
+        }
+      });
+    }, 50);
+  });
+})();
+</script>
+<script>
+// Inyectar textos dinámicos de config que no cubre main.js
+(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      if (typeof APP_CONFIG === 'undefined') return;
+      var C = APP_CONFIG;
+      var t = function(id, v){ var e = document.getElementById(id); if(e) e.textContent = v; };
+      var h = function(id, v){ var e = document.getElementById(id); if(e) e.innerHTML = v; };
+      t('club-descripcion', C.club.descripcion);
+      t('empresa-mision', C.empresa.mision);
+      t('empresa-unico', C.empresa.unico);
+      t('empresa-envio', C.empresa.envio);
+      t('nutri-subtitulo', C.tablaNutricional.subtitulo);
+      // El texto del botón de WhatsApp se mantiene (no se sobreescribe con la URL);
+      // solo se actualiza el enlace (href).
+      var wa2 = document.getElementById('link-whatsapp2');
+      if(wa2) wa2.href = C.enlaces.whatsapp;
+    }, 100);
+  });
+})();
+</script>
+<!-- Sincronización de datos de empresa (horarios, contacto, misión) desde el Panel vía Firebase.
+     Si el Panel publica cambios, la web los muestra automáticamente. Si no hay conexión,
+     se mantienen los valores de config.js. -->
+<script type="module">
+(async function(){
+  try{
+    const { initializeApp } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js');
+    const { getDatabase, ref, onValue } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js');
+    const cfg={ apiKey:'AIzaSyBfPmfE6axd_W0Z80b0L-Jbjy6q7l9_NTk', authDomain:'productos-globales-campo.firebaseapp.com', databaseURL:'https://productos-globales-campo-default-rtdb.firebaseio.com', projectId:'productos-globales-campo' };
+    const app=initializeApp(cfg, 'pgweb');
+    const db=getDatabase(app);
+    onValue(ref(db,'config/empresa'), function(snap){
+      const e=snap.val(); if(!e) return;
+      // --- Horarios ---
+      var hor=e.horarios;
+      if(hor && typeof hor==='object'){ hor = Array.isArray(hor) ? hor : Object.keys(hor).map(function(k){ return hor[k]; }); }
+      if(Array.isArray(hor) && hor.length){
+        const tb=document.getElementById('horarios-body');
+        if(tb){ tb.innerHTML=hor.filter(Boolean).map(function(h){ var cls=((h.horario||'')==='Cerrado')?' class="cerrado"':''; return '<tr><td>'+(h.dia||'')+'</td><td'+cls+'>'+(h.horario||'')+'</td></tr>'; }).join(''); }
+      }
+      var set=function(id,v){ var el=document.getElementById(id); if(el&&v!=null&&v!=='') el.textContent=v; };
+      var href=function(id,v){ var el=document.getElementById(id); if(el&&v) el.setAttribute('href',v); };
+      // --- Encabezado / Hero ---
+      set('hero-title', e.marca);
+      set('hero-slogan', e.heroSlogan || e.lema);
+      set('hero-lema', e.heroLema);
+      // --- Empresa / contacto ---
+      set('footer-dir', e.direccion); set('footer-phone', e.tel); set('footer-phone2', e.tel);
+      set('footer-email', e.email); set('footer-email2', e.email);
+      set('footer-location', e.lugar);
+      set('footer-copy', e.footerCopy);
+      set('footer-ruc', e.footerRuc || (e.ruc ? ('RUC: '+e.ruc) : ''));
+      set('empresa-mision', e.mision);
+      set('empresa-unico', e.unico);
+      set('empresa-envio', e.envio);
+      if(e.email){ var l1=document.getElementById('footer-email-link'); if(l1) l1.href='mailto:'+e.email; var l2=document.getElementById('footer-email-link2'); if(l2) l2.href='mailto:'+e.email; }
+      // --- Club de Fidelidad ---
+      set('club-descripcion', e.clubDescripcion);
+      set('club-eslogan', e.clubEslogan);
+      set('club-cierre', e.clubCierre);
+      // --- Formas de pago ---
+      set('pago-banco', e.banco);
+      set('pago-cuenta', e.cuenta);
+      set('pago-titular', e.titular);
+      set('pago-ach', e.whatsapp || e.ach);
+      set('pago-entrega', e.pagoEntrega);
+      set('pago-cheque', e.pagoCheque);
+      // --- Enlaces externos ---
+      if(e.enlaceKyte){ href('link-kyte',e.enlaceKyte); href('link-kyte2',e.enlaceKyte); href('link-kyte-cereales',e.enlaceKyte); }
+      if(e.enlaceTarjetaFidelidad){ href('link-tarjeta',e.enlaceTarjetaFidelidad); href('link-tarjeta-club',e.enlaceTarjetaFidelidad); }
+      if(e.enlacePagoQR){ href('link-qr',e.enlacePagoQR); }
+      if(e.enlaceAgente){ href('link-agente',e.enlaceAgente); }
+      if(e.whatsapp){ var wn=String(e.whatsapp).replace(/\D/g,'').replace(/^505/,''); if(wn){ var wurl='https://wa.me/505'+wn; href('link-whatsapp2',wurl); href('link-whatsapp',wurl); } }
+    });
+  }catch(err){ /* sin conexión: se usan los valores de config.js */ }
+})();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('./sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>
