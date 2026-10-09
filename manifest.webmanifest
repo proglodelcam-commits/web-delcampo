@@ -1,20 +1,40 @@
 {
   "name": "PG del Campo",
-  "short_name": "PG Campo",
-  "description": "Productos Globales del Campo — Del Campo a su Mesa",
-  "start_url": "/",
-  "display": "standalone",
-  "orientation": "any",
-  "background_color": "#f4f6f4",
-  "theme_color": "#2d5a27",
+  "short_name": "PG del Campo",
+  "description": "PG del Campo — Del Campo a su Mesa. Café de altura, pinolillo, pinol y humus de lombriz. Jinotepe, Carazo, Nicaragua.",
   "lang": "es",
+  "dir": "ltr",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#2d5a27",
+  "categories": ["food", "shopping", "business"],
   "icons": [
-    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
-  ],
-  "categories": ["business", "shopping"],
-  "shortcuts": [
-    { "name": "Tienda Kyte", "url": "https://proglodelcampo.catalog.kyte.site/", "description": "Ir a la tienda en línea" },
-    { "name": "Contactar Agente", "url": "https://business-card.io/c/2c023cba-0548-485c-9285-80d553459cdd/", "description": "Tarjeta digital del agente" }
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "img/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }

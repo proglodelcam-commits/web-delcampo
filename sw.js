@@ -1,42 +1,60 @@
-// Service Worker — PG del Campo PWA
-const CACHE_NAME = 'pg-del-campo-v3';
-const PRECACHE = [
-  '/',
-  '/index.html',
-  '/css/styles.css',
-  '/js/config.js',
-  '/js/main.js',
-  '/manifest.webmanifest'
+/* PG del Campo — Service Worker PWA */
+const CACHE = 'pgdelcampo-v1';
+const CORE = [
+  './',
+  './index.html',
+  './css/styles.css',
+  './manifest.webmanifest',
+  './img/logo-pg.png',
+  './img/icon-192.png',
+  './img/icon-512.png'
 ];
 
-// Install: pre-cache shell
-self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
+// Instalación: precache de archivos base (tolerante a fallos)
+self.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches.open(CACHE).then(function (cache) {
+      return Promise.allSettled(CORE.map(function (url) { return cache.add(url); }));
+    }).then(function () { return self.skipWaiting(); })
+  );
 });
 
-// Activate: limpiar cachés viejas
-self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(keys =>
-    Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-  ).then(() => self.clients.claim()));
+// Activación: limpiar cachés antiguas
+self.addEventListener('activate', function (event) {
+  event.waitUntil(
+    caches.keys().then(function (keys) {
+      return Promise.all(keys.map(function (k) {
+        if (k !== CACHE) { return caches.delete(k); }
+      }));
+    }).then(function () { return self.clients.claim(); })
+  );
 });
 
-// Fetch: cache-first para shell, network-first para API
-self.addEventListener('fetch', e => {
-  const url = new URL(e.request.url);
-  // No cachear Apps Script (chatbot) ni LAFISE
-  if (url.hostname.includes('script.google.com') || url.hostname.includes('lafise.com') || url.hostname.includes('firebaseio.com') || url.hostname.includes('gstatic.com')) return;
+// Fetch: network-first para navegación, cache-first para estáticos
+self.addEventListener('fetch', function (event) {
+  const req = event.request;
+  if (req.method !== 'GET') { return; }
 
-  e.respondWith(
-    caches.match(e.request).then(cached => {
-      if (cached) return cached;
-      return fetch(e.request).then(resp => {
-        if (resp.ok && (url.origin === self.location.origin)) {
-          const clone = resp.clone();
-          caches.open(CACHE_NAME).then(c => c.put(e.request, clone));
-        }
-        return resp;
-      });
+  if (req.mode === 'navigate') {
+    event.respondWith(
+      fetch(req).then(function (res) {
+        const copy = res.clone();
+        caches.open(CACHE).then(function (c) { c.put(req, copy); });
+        return res;
+      }).catch(function () {
+        return caches.match(req).then(function (r) { return r || caches.match('./index.html'); });
+      })
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(req).then(function (cached) {
+      return cached || fetch(req).then(function (res) {
+        const copy = res.clone();
+        caches.open(CACHE).then(function (c) { c.put(req, copy); });
+        return res;
+      }).catch(function () { return cached; });
     })
   );
 });
