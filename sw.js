@@ -1,5 +1,10 @@
-/* PG del Campo — Service Worker PWA */
-const CACHE = 'pgdelcampo-v1';
+/* PG del Campo — Service Worker PWA
+ * v3: estrategia "red primero" (network-first) para que los cambios del sitio
+ * se vean enseguida al recargar, y la caché solo sirva de respaldo sin conexión.
+ * Al subir una versión nueva, sube el número de CACHE (v3 -> v4) para forzar
+ * la limpieza de la caché anterior en todos los dispositivos.
+ */
+const CACHE = 'pgdelcampo-v3';
 const CORE = [
   './',
   './index.html',
@@ -10,7 +15,7 @@ const CORE = [
   './img/icon-512.png'
 ];
 
-// Instalación: precache de archivos base (tolerante a fallos)
+// Instalación: precache base + activar de inmediato la nueva versión
 self.addEventListener('install', function (event) {
   event.waitUntil(
     caches.open(CACHE).then(function (cache) {
@@ -19,7 +24,7 @@ self.addEventListener('install', function (event) {
   );
 });
 
-// Activación: limpiar cachés antiguas
+// Activación: borrar TODAS las cachés antiguas y tomar control ya
 self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches.keys().then(function (keys) {
@@ -30,31 +35,26 @@ self.addEventListener('activate', function (event) {
   );
 });
 
-// Fetch: network-first para navegación, cache-first para estáticos
+// Fetch: RED PRIMERO para todo (navegación y estáticos).
+// Si hay internet, siempre trae el archivo más reciente y actualiza la caché;
+// si no hay internet, usa la copia guardada (modo offline).
 self.addEventListener('fetch', function (event) {
   const req = event.request;
   if (req.method !== 'GET') { return; }
 
-  if (req.mode === 'navigate') {
-    event.respondWith(
-      fetch(req).then(function (res) {
-        const copy = res.clone();
-        caches.open(CACHE).then(function (c) { c.put(req, copy); });
-        return res;
-      }).catch(function () {
-        return caches.match(req).then(function (r) { return r || caches.match('./index.html'); });
-      })
-    );
-    return;
-  }
-
   event.respondWith(
-    caches.match(req).then(function (cached) {
-      return cached || fetch(req).then(function (res) {
+    fetch(req).then(function (res) {
+      // Guardar copia fresca solo de respuestas válidas del mismo origen
+      if (res && res.status === 200 && res.type === 'basic') {
         const copy = res.clone();
         caches.open(CACHE).then(function (c) { c.put(req, copy); });
-        return res;
-      }).catch(function () { return cached; });
+      }
+      return res;
+    }).catch(function () {
+      // Sin conexión: devolver caché; para navegación, caer al index
+      return caches.match(req).then(function (r) {
+        return r || (req.mode === 'navigate' ? caches.match('./index.html') : undefined);
+      });
     })
   );
 });
