@@ -13,6 +13,20 @@
   <link rel="icon" href="img/icon-192.png">
   <link rel="apple-touch-icon" href="img/icon-192.png">
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Logo verde con fondo transparente: sin recuadro blanco, se integra al diseño -->
+  <style>
+    .nav-logo-img,.footer-logo-img{
+      background:transparent;
+      object-fit:contain;
+      display:block;
+    }
+    .nav-logo-img{height:46px;width:auto;max-width:210px}
+    .footer-logo-img{height:66px;width:auto;max-width:240px;margin:0 auto}
+    @media (max-width:480px){
+      .nav-logo-img{height:40px;max-width:170px}
+      .footer-logo-img{height:56px}
+    }
+  </style>
 </head>
 <body>
 
@@ -20,7 +34,7 @@
 <header class="site-header">
   <div class="nav-bar">
     <a href="#inicio" class="nav-brand">
-      <img src="img/logo-pg.png" alt="PG del Campo" class="nav-logo-img">
+      <img src="img/logo-pg.png" alt="Productos Globales del Campo" class="nav-logo-img" loading="eager">
     </a>
     <button id="nav-toggle" aria-label="Menú">☰</button>
     <ul id="nav-links" class="nav-links">
