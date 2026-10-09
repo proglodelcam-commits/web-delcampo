@@ -36,6 +36,30 @@
       .hero-logo{max-width:120px;max-height:100px;margin-bottom:12px}
       #nutri-img{max-width:100%}
     }
+    /* Botón "Instalar app" (PWA) */
+    .pwa-install-btn{
+      position:fixed; left:16px; bottom:24px; z-index:200;
+      display:none; align-items:center; gap:8px;
+      background:#2d5a27; color:#fff; border:none; cursor:pointer;
+      padding:12px 18px; border-radius:50px; font-weight:700; font-size:.9rem;
+      box-shadow:0 4px 18px rgba(45,90,39,.4);
+    }
+    .pwa-install-btn.show{display:inline-flex}
+    .pwa-install-btn svg{width:18px;height:18px}
+    .pwa-ios-hint{
+      position:fixed; left:16px; right:16px; bottom:24px; z-index:201;
+      display:none; background:#fff; color:#333; border-radius:14px;
+      box-shadow:0 8px 30px rgba(0,0,0,.2); padding:16px 18px 14px; max-width:420px;
+      margin:0 auto; font-size:.9rem; line-height:1.5;
+    }
+    .pwa-ios-hint.show{display:block}
+    .pwa-ios-hint b{color:#2d5a27}
+    .pwa-ios-hint p{margin:6px 0}
+    .pwa-ios-close{
+      position:absolute; top:6px; right:12px; background:none; border:none;
+      font-size:1.4rem; cursor:pointer; color:#999; line-height:1;
+    }
+    @media (max-width:480px){ .pwa-install-btn{bottom:20px; left:12px} }
   </style>
 </head>
 <body>
@@ -472,6 +496,60 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js').catch(function(){});
   });
 }
+</script>
+<!-- ======= Instalar como app (PWA) ======= -->
+<button id="pwa-install" class="pwa-install-btn" type="button" aria-label="Instalar app">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+  Instalar app
+</button>
+<div id="pwa-ios-hint" class="pwa-ios-hint" role="dialog" aria-label="Cómo instalar la app">
+  <button class="pwa-ios-close" id="pwa-ios-close" type="button" aria-label="Cerrar">&times;</button>
+  <p><b>Instala PG del Campo</b> en tu iPhone/iPad:</p>
+  <p>1. Toca el botón <b>Compartir</b> (el cuadro con la flecha ↑) en Safari.<br>
+     2. Elige <b>“Agregar a inicio”</b> (Add to Home Screen).<br>
+     3. Toca <b>Agregar</b>. ¡Listo! Quedará el ícono en tu pantalla.</p>
+</div>
+<script>
+(function(){
+  var deferred=null;
+  var btn=document.getElementById('pwa-install');
+  var iosHint=document.getElementById('pwa-ios-hint');
+  var iosClose=document.getElementById('pwa-ios-close');
+  var isStandalone=window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+  var isIOS=/iphone|ipad|ipod/i.test(window.navigator.userAgent);
+
+  // Android / Chrome / Edge: capturar el evento y mostrar el botón
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    deferred=e;
+    if(btn){ btn.classList.add('show'); }
+  });
+  if(btn){
+    btn.addEventListener('click', function(){
+      if(deferred){
+        deferred.prompt();
+        deferred.userChoice.then(function(){ deferred=null; btn.classList.remove('show'); });
+      }
+    });
+  }
+  // Ya instalada: ocultar el botón
+  window.addEventListener('appinstalled', function(){
+    if(btn){ btn.classList.remove('show'); }
+    deferred=null;
+  });
+  // iOS/Safari no dispara el evento: mostrar instrucciones una sola vez
+  if(isIOS && !isStandalone && iosHint){
+    var seen=false;
+    try{ seen=!!localStorage.getItem('pwaIosHintSeen'); }catch(e){}
+    if(!seen){ setTimeout(function(){ iosHint.classList.add('show'); }, 2500); }
+  }
+  if(iosClose && iosHint){
+    iosClose.addEventListener('click', function(){
+      iosHint.classList.remove('show');
+      try{ localStorage.setItem('pwaIosHintSeen','1'); }catch(e){}
+    });
+  }
+})();
 </script>
 </body>
 </html>
